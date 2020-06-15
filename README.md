@@ -21,6 +21,10 @@ Welcome Page
 :-------------------------:
 ![Welcome Page](/github-images/wireframes/welcome-page.jpg)
 
+What to Expect
+:-------------------------:
+![What to Expect](/github-images/wireframes/what-to-expect.jpg)
+
 Login Page
 :-------------------------:
 ![Login Page](/github-images/wireframes/login-page.jpg)
