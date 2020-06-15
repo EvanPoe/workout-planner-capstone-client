@@ -17,9 +17,42 @@ This app is for two types of users: a visitor and a logged-in user
 
 
 ### Wireframes
-Landing/Login Page
+Welcome Page
 :-------------------------:
-![Landing/Login Page](/github-images/wireframes/welcome-page.jpg)
+![Welcome Page](/github-images/wireframes/welcome-page.jpg)
+
+Login Page
+:-------------------------:
+![Login Page](/github-images/wireframes/login-page.jpg)
+
+Sign-up Page
+:-------------------------:
+![Sign-up Page](/github-images/wireframes/sign-up-page.jpg)
+
+Empty Library
+:-------------------------:
+![Empty Library](/github-images/wireframes/empty-library.jpg)
+
+Filled Library
+:-------------------------:
+![Filled Library](/github-images/wireframes/filled-library.jpg)
+
+Workout Builder
+:-------------------------:
+![Workout Builder](/github-images/wireframes/workout-builder.jpg)
+
+Workout Page
+:-------------------------:
+![Workout Page](/github-images/wireframes/workout-page.jpg)
+
+Basic Information Page
+:-------------------------:
+![Basic Information Page](/github-images/wireframes/basic-information.jpg)
+
+Nav-bar
+:-------------------------:
+![Nav-bar](/github-images/wireframes/welcome-page.jpg)
+
 
 
 ## Screenshots
