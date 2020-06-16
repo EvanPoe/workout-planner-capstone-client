@@ -9,12 +9,50 @@ You can access a working prototype of the React app here: https://your-app-clien
 ## User Stories
 This app is for two types of users: a visitor and a logged-in user
 
-#### Landing Page
+#### Welcome Page && What to Expect
 * as a visitor
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
+#### Login Page
+* as a returning user
+* I want to be able to log in
+* so I can access my exercise library
 
+### Sign-up Page
+* as a visitor
+* I want to be able to sign up
+* so I can start building and using my exercise library
+
+### Empty Library
+* as a first time user
+* I want to be able to create my first workout
+* so I can save it to my library
+
+### Filled Library
+* as a returning user
+* I want to view my workouts in a list form, delete workouts, or add new ones
+* so I can select an individual workout
+
+### Workout Builder
+* as a user
+* I want to create a new workout based on experience and workout type
+* so I can add it to my library
+
+### Workout Page
+* as a user
+* I want to view my workout that I selected from my Library
+* so I can follow it and exercise
+
+### Basic Information Page
+* as a new user
+* I want to view basic information regarding exercise and the website
+* so I am aware of the necessary health risks, safety precautions, and technical language
+
+### Nav-bar
+* as a user
+* I want to view the 'Home', 'Exercise Library', and 'Log-in/Log-out' links
+* so I can more easily navigate the website
 
 ### Wireframes
 Welcome Page
