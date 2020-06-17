@@ -98,9 +98,9 @@ Nav-bar
 
 
 ## Screenshots
-Landing/Login Page
+Welcome Page and What to Expect
 :-------------------------:
-![Landing Page](/github-images/screenshots/login-page-screenshot.png)
+![Landing Page](/github-images/screenshots/welcome-page.png)
 
 
 ## Functionality
