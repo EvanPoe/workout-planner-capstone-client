@@ -91,16 +91,40 @@ Basic Information Page
 :-------------------------:
 ![Basic Information Page](/github-images/wireframes/basic-information.jpg)
 
-Nav-bar
-:-------------------------:
-![Nav-bar](/github-images/wireframes/welcome-page.jpg)
-
 
 
 ## Screenshots
 Welcome Page and What to Expect
 :-------------------------:
 ![Landing Page](/github-images/screenshots/welcome-page.png)
+
+Login Page
+:-------------------------:
+![Login Page](/github-images/screenshots/login-page.png)
+
+Sign-up Page
+:-------------------------:
+![Sign-up Page](/github-images/screenshots/sign-up-page.png)
+
+Empty Library
+:-------------------------:
+![Empty Library](/github-images/screenshots/empty-library.png)
+
+Filled Library
+:-------------------------:
+![LFilled Library](/github-images/screenshots/filled-library.png)
+
+Workout Builder
+:-------------------------:
+![Workout Builder](/github-images/screenshots/workout-builder.png)
+
+Workout Page
+:-------------------------:
+![Workout Page](/github-images/screenshots/workout-page.png)
+
+Basic Information Page
+:-------------------------:
+![Basic Information Page](/github-images/screenshots/basic-information.png)
 
 
 ## Functionality
