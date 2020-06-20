@@ -1,38 +1,130 @@
-.App {
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.nav-bar {
+  margin: 5px auto;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background: grey;
+  border: 1px solid black;
+}
+
+li {
+  list-style: none;
+}
+
+.pushup-image {
+  width: 100px;
+  height: 100px;
+}
+
+.welcome-header {
+  text-align: center;
+  background: grey;
+  padding: 10px;
+}
+
+.welcome-fieldset {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 400px;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcome-fieldset div, label, input {
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#example-section header, h3, h4 {
+  text-align: center;
+  margin: 15px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.example-header {
+  background: grey;
+  padding: 10px;
+  margin: auto;
+}
+
+.empty-library {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.library-intro {
+  margin: 10px 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disclaimer {
+  margin: 10px 25px;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.add-workout {
+  margin-top: 15px;
+}
+
+.useful-info-link {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.filled-library {
+  display: flex;
+  flex-direction: column;
+}
+
+.builder-fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-difficulty {
+  margin: 10px auto;
+  max-width: 115px;
+}
+
+.select-type {
+  margin: 10px auto;
+  max-width: 115px;
+}
+
+.builder-submits {
+  display: flex;
+  margin: auto;
+}
+
+.builder-cancel {
+  margin-right: 5px;
+}
+
+.builder-create {
+  margin-left: 5px;
+}
+
+.workout-back-button{
+    display: block;
+    margin: 0 auto;
+}
+
+.info-back-button {
+  display: block;
+  margin: 0 auto;
+}
+
+.overhead-press-image {
+  width: 115px;
+  height: 100px;
 }
