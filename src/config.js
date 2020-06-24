@@ -1,5 +1,3 @@
-module.exports = {
-    PORT: process.env.PORT || 8000,
-    NODE_ENV: process.env.NODE_ENV || 'development',
-    DB_URL: process.env.DB_URL || 'postgresql://postgres@localhost/workout-planner',
-}
+export default {
+    API_ENDPOINT: 'https://country-search-server-app.herokuapp.com/'
+    }

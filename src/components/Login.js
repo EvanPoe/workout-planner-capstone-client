@@ -7,8 +7,8 @@ export class Login extends Component {
     this.state = {
       error: null,
       params: {
-        email: "",
-        password: "",
+        loginEmail: "",
+        loginPassword: "",
       },
     };
   }
@@ -53,13 +53,13 @@ export class Login extends Component {
       data[value[0]] = value[1];
     }
     console.log(data);
-    let { email, password } = data;
-    if (this.validateEmail(email) === "") {
+    let { loginEmail, loginPassword } = data;
+    if (this.validateEmail(loginEmail) === "") {
       this.setState({
         error: "email is not valid",
       });
     }
-    if (this.validatePassword(password) === "") {
+    if (this.validatePassword(loginPassword) === "") {
       this.setState({
         error: "password is not valid",
       });
@@ -110,9 +110,9 @@ export class Login extends Component {
         }
       })
       .catch((err) => {
-        this.setState({
-          error: err.message,
-        });
+        // this.setState({
+        //   error: err.message,
+        // });
       });
   };
 
@@ -128,22 +128,22 @@ export class Login extends Component {
         <header>
           <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
         </header>
-        <form className="login-form" onSubmit={this.handleSubmit}>
+        <form className="loginForm" onSubmit={this.handleSubmit}>
           <fieldset className="welcome-fieldset">
             {errorMessage}
-            <div className="login-message">
+            <div className="loginMessage">
               <h3>Log In</h3>
             </div>
-            <label htmlFor="login-email">Email Address: </label>
+            <label htmlFor="loginEmail">Email Address: </label>
             <input
-              name="login-email"
+              name="loginEmail"
               type="text"
               placeholder="Email"
               required
             />
-            <label htmlFor="login-password">Password: </label>
+            <label htmlFor="loginPassword">Password: </label>
             <input
-              name="login-password"
+              name="loginPassword"
               type="password"
               placeholder="Password"
               required

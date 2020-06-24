@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 export class Library extends Component {
   render() {
@@ -9,9 +10,12 @@ export class Library extends Component {
           any workouts. That's ok! Click the button below to create your first!
         </p>
         <input className="add-workout" type="submit" value="Add Workout" />
-        <a className="useful-info-link" href="placeholder">
+        <NavLink className="useful-info-link" to="/BasicInfo">
+          <h5>Useful Information for Newcomers!</h5>
+        </NavLink>
+        {/* <a className="useful-info-link" href="placeholder">
           Useful Information for Newcomers!
-        </a>
+        </a> */}
         <p className="disclaimer">
           Disclaimer: You should consult your physician or other health care
           professional before starting this or any other fitness program to
