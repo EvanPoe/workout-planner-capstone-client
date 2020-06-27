@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import config from '../config';
 
 export class Builder extends Component {
@@ -80,6 +81,7 @@ export class Builder extends Component {
         if (data.totalItems === 0) {
           throw new Error("No data found");
         }
+        window.location.href = "/Library"; //will work once an API is implemented and the data is successful
       })
       .catch((err) => {
         // this.setState({
@@ -118,7 +120,8 @@ export class Builder extends Component {
               <option value="lower">Lower</option>
             </select>
             <section className="builder-submits">
-              <input className="builder-cancel" type="submit" value="Cancel" />
+            <NavLink to='/Library'>Cancel</NavLink>
+              {/* <input className="builder-cancel" type="submit" value="Cancel" /> */}
               <input className="builder-create" type="submit" value="Create" />
             </section>
           </fieldset>

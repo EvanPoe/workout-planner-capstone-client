@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 
 export class BasicInfo extends Component {
     render() {
@@ -27,7 +28,8 @@ export class BasicInfo extends Component {
                 <p>Lorem ipsum dolor sit amet, qui an errem temporibus comprehensam, sed no sumo justo ullum.</p>
               </li>
             </ul>
-            <input type="submit" value="Back" className="info-back-button" />
+            <NavLink to='/Library'>Back</NavLink>
+            {/* <button onClick={window.history.back()} className="info-back-button">Back</button> */}
           </div>
         )
     }
