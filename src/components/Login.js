@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom';
 import config from "../config";
 
 export class Login extends Component {
@@ -128,10 +129,10 @@ export class Login extends Component {
         <header>
           <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
         </header>
-        <form className="loginForm" onSubmit={this.handleSubmit}>
+        <form className="login-form" onSubmit={this.handleSubmit}>
           <fieldset className="welcome-fieldset">
             {errorMessage}
-            <div className="loginMessage">
+            <div className="login-message">
               <h3>Log In</h3>
             </div>
             <label htmlFor="loginEmail">Email Address: </label>
@@ -150,7 +151,8 @@ export class Login extends Component {
             />
             <label htmlFor="get-started">Let's Get Going!</label>
             <input name="get-started" type="submit" value="Log In" />
-            <a href="placeholder">New User? Create an Account Here...</a>
+            <NavLink to='/Signup'>New User? Create an Account Here...</NavLink>
+            {/* <a href="placeholder">New User? Create an Account Here...</a> */}
           </fieldset>
         </form>
       </div>

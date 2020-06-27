@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import Nav from "./Nav";
 
 export class Library extends Component {
   render() {
@@ -9,7 +10,8 @@ export class Library extends Component {
           Welcome to your personal workout library! It looks like you don't have
           any workouts. That's ok! Click the button below to create your first!
         </p>
-        <input className="add-workout" type="submit" value="Add Workout" />
+        {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
+        <NavLink to='/Builder'>Add Workout</NavLink>
         <NavLink className="useful-info-link" to="/BasicInfo">
           <h5>Useful Information for Newcomers!</h5>
         </NavLink>

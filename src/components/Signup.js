@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from 'react-router-dom';
 import config from "../config";
 
 export class Signup extends Component {
@@ -147,7 +148,8 @@ export class Signup extends Component {
             <input name="verifyPassword" type="password" />
             <label htmlFor="getStarted">Let's Get Started!</label>
             <input name="getStarted" type="submit" value="Register" />
-            <a href="placeholder">Returning User? Log In Here...</a>
+            <NavLink to='/Login'>Returning User? Log In Here...</NavLink>
+            {/* <a href="placeholder">Returning User? Log In Here...</a> */}
           </fieldset>
         </form>
       </div>

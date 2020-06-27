@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export class Home extends Component {
+
     render() {
         return (
             <div className="welcome-page">
@@ -9,14 +11,16 @@ export class Home extends Component {
                     <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
                 </header>
 
-                <form className="login-form">
+                <section className="login-form">
                     <fieldset className="welcome-fieldset">
                         <h3 className="welcome-message">A customized workout just for you is only a few clicks away!</h3>
                         <label htmlFor="get-started">Let's Get Started!</label>
-                        <input name="get-started" type="submit" value="Log In" />
-                        <a href="/">New User? Create an Account Here...</a>
+                        <NavLink to='/Login'>Login</NavLink>
+                        <NavLink to='/Signup'>New User? Create an Account Here...</NavLink>
+                        {/* <input name="get-started" type="submit" value="Log In" />
+                        <a href="/">New User? Create an Account Here...</a> */}
                     </fieldset>
-                </form>
+                </section>
 
                 <section id="example-section">
                     <header className="example-header">What to Expect</header>
