@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import config from '../config';
 import Nav from "./Nav";
 
 //receives workouts from user's database AND from Builder.js and renders Links to each Workout.js
@@ -10,7 +11,49 @@ export class Library extends Component {
       userWorkouts: [],
     };
   }
+
+  componentDidMount() {
+    const userId = 3;
+
+    // console.log(collectionId)
+
+    let url = `${config.API_ENDPOINT}/workouts`;
+
+    // console.log(url)
+
+    fetch(url)
+      .then((response) => response.json())
+
+      .then((data) => {
+        // console.log('success:', data)
+        console.log(data)
+
+        // let outPutObject = [];
+
+        // let bookDetails = data
+
+        this.setState({
+          userWorkouts: data,
+        });
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
+
+    console.log("Stateful component add book successfully mounted.");
+  }
+
   render() {
+    const showUserWorkouts = this.state.userWorkouts.map((workout, key) => {
+      return (
+        <div className="list" key={key}>
+            <h3>{workout.difficulty}</h3>
+            <h3>{workout.type}</h3>
+            <h3>{workout.user_id}</h3>
+        </div>
+      );
+    });
     return (
       <div className="empty-library">
         <p className="library-intro">
@@ -18,6 +61,7 @@ export class Library extends Component {
           any workouts. That's ok! Click the button below to create your first!
         </p>
         {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
+        {showUserWorkouts}
         <NavLink to='/Builder'>Add Workout</NavLink>
         <NavLink className="useful-info-link" to="/BasicInfo">
           <h5>Useful Information for Newcomers!</h5>
