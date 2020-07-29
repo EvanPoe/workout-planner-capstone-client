@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Nav from "./Nav";
 
+//receives workouts from user's database AND from Builder.js and renders Links to each Workout.js
 export class Library extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userWorkouts: [],
+    };
+  }
   render() {
     return (
       <div className="empty-library">

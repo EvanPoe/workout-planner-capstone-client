@@ -1,6 +1,7 @@
 {
   "name": "workout-planner-capstone-client",
   "version": "0.1.0",
+  "description": "A library for workouts based on workout type and difficulty.",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

@@ -19,6 +19,28 @@ export class App extends Component {
     };
   }
 
+//   componentDidMount() {
+//     Promise.all([
+//         fetch(`http://localhost:9090/notes`),
+//         fetch(`http://localhost:9090/folders`)
+//     ])
+//         .then(([notesRes, foldersRes]) => {
+//             if (!notesRes.ok)
+//                 return notesRes.json().then(e => Promise.reject(e));
+//             if (!foldersRes.ok)
+//                 return foldersRes.json().then(e => Promise.reject(e));
+
+//             return Promise.all([notesRes.json(), foldersRes.json()]);
+//         })
+//         .then(([notes, folders]) => {
+//             this.setState({notes, folders});
+//         })
+//         .catch(error => {
+//             this.setState({error});
+//         });
+// }
+
+
   render() {
     return (
       <div className="App">
@@ -26,12 +48,12 @@ export class App extends Component {
           <Nav />
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route exact path='/Login' component={Login}/>
-            <Route exact path='/Signup' component={Signup}/>
-            <Route exact path='/Library' component={Library}/>
-            <Route exact path='/Builder' component={Builder}/>
-            <Route exact path='/Workout' component={Workout}/>
-            <Route exact path='/BasicInfo' component={BasicInfo}/>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/signup' component={Signup}/>
+            <Route exact path='/library' component={Library}/>
+            <Route exact path='/builder' component={Builder}/>
+            <Route exact path='/workout' component={Workout}/>
+            <Route exact path='/basic-info' component={BasicInfo}/>
           </Switch>
         </BrowserRouter>
       </div>

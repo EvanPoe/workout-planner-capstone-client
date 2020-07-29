@@ -1,77 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# workout-planner-capstone-client
-# Capstone Project Title
-One line description of what this app is doing and who is it for
+# Workout Planner Capstone
+A library for workouts based on workout type and difficulty.
 
 ## Working Prototype
-You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://workout-planner-capstone.herokuapp.com/
 
 
 ## User Stories
@@ -199,10 +130,42 @@ Basic Information Page
 The app's functionality includes:
 * Every User has the ability to create an account
 
-## Business Objects (back-end structure)
-* User (database table)
-    * Username (email validation)
-    * Password (at least 8 chars, at least one alpha and a special character validation)
+## Front-end Structure - React Components Map
+* __Index.js__ (stateless)
+    * __App.js__ (stateful)
+        * __Home.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __Login.js__ (stateful) -
+            * __Signup.js__ (stateful) -
+        * __Nav.js__ (stateless) -
+        * __BasicInfo.js__ (stateless) -
+        * __Library.js__ (second)(stateful) - receives workouts from user's database AND from Builder.js and renders Links to each Workout.js
+            * __Builder.js__ (first)(stateful) - this component fetches a single workout from the database and sends that data to the Library.js
+            * __Workout.js__ (third)(stateful) - render the exercises from the single workout passed to this component
+
+##  Back-end Structure - Business Objects
+* Users (database table)
+    * User ID
+    * Email (email validation)
+    * Password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore validation)
+* Workouts (database table)
+    * Workout ID
+    * User ID
+    * Type (Upper body, Lower body)
+    * Difficulty (Beginner, Intermediate, Advanced)
+* Exercises (database table)
+    * Exercise ID
+    * Workout ID
+    * Name
+    * Image
+    * Description & Instruction
+    * Sets and Reps
+    * Rest Period
+    * is_upper (boolean: true or false)
+    * is_lower (boolean: true or false)
+    * is_beginner (boolean: true or false)
+    * is_intermediate (boolean: true or false)
+    * is_advanced (boolean: true or false)
+
 
 
 ## Technology

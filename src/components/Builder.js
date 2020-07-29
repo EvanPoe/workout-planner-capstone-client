@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import config from '../config';
 
+//this component fetches a single workout from the database and sends that data to the Library.js
 export class Builder extends Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
+      databaseWorkouts: [],
       params: {
         difficulty: "",
         type: "",
@@ -27,7 +29,7 @@ export class Builder extends Component {
     //create an object to store the search filters
     const data = {};
 
-    //get all the from data from the form component
+    //get all the form data from the form component
     const formData = new FormData(e.target);
 
     //for each of the keys in form data populate it with form value
@@ -42,29 +44,23 @@ export class Builder extends Component {
       params: data
     });
 
-    //check if the state is populated with the search params data
-    console.log(this.state.params);
-
-    const searchURL = `${config.API_ENDPOINT}/registration-page`;
-
-    const queryString = this.formatQueryParams(data);
-
-    //sent all the params to the final url
-    const url = searchURL + "?" + queryString;
-
-    console.log(url);
+    let payload = {
+      user_id: 3,
+      difficulty: data.difficulty,
+      type: data.type
+    };
 
     //define the API call parameters
     const options = {
       method: "POST",
-      header: {
-        Authorization: "",
-        "Content-Type": "application/json",
+      headers: {
+        "content-type": "application/json",
       },
+      body: JSON.stringify(payload),
     };
 
     //useing the url and parameters above make the api call
-    fetch(url, options)
+    fetch(`${config.API_ENDPOINT}/workouts`, options)
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
@@ -81,7 +77,7 @@ export class Builder extends Component {
         if (data.totalItems === 0) {
           throw new Error("No data found");
         }
-        window.location.href = "/Library"; //will work once an API is implemented and the data is successful
+        window.location.href = "/library"; //will work once an API is implemented and the data is successful
       })
       .catch((err) => {
         // this.setState({

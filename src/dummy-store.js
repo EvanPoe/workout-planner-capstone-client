@@ -1,6 +1,7 @@
 export default {
   workouts: [
     {
+      id: "",
       type: "Upper Body",
       difficulty: "Beginner",
       exerciseOne: "Pushups",
@@ -25,7 +26,7 @@ export default {
       difficulty: "Advanced",
     },
     {
-      type: "Lower",
+      type: "Lower Body",
       difficulty: "Beginner",
     },
     {
