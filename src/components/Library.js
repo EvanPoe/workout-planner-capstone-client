@@ -16,13 +16,13 @@ export class Library extends Component {
   componentDidMount() {
     //need the user's Id to assign to the userId variable
 
-    const userId = 3;
+    const userId = TokenService.getUserId();
 
     // console.log(collectionId)
 
-    let url = `${config.API_ENDPOINT}/workouts`;
+    let url = `${config.API_ENDPOINT}/workouts/users/${userId}`;
 
-    // console.log(url)
+    console.log(url)
 
     fetch(url)
       .then((response) => response.json())
@@ -63,7 +63,6 @@ export class Library extends Component {
         <p className="library-intro">
           Welcome to your personal workout library! It looks like you don't have
           any workouts. That's ok! Click the button below to create your first!
-          {TokenService.getUserId()}
         </p>
         {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
         <NavLink

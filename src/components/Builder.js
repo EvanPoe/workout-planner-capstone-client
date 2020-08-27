@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import TokenService from '../services/token-service';
 import config from '../config';
 
 //this component fetches a single workout from the database and sends that data to the Library.js
@@ -45,7 +46,7 @@ export class Builder extends Component {
     });
 
     let payload = {
-      user_id: 3,
+      user_id: TokenService.getUserId(),
       difficulty: data.difficulty,
       type: data.type
     };
