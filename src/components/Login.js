@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
+import TokenService from '../services/token-service';
+import AuthApiService from '../services/auth-api-service';
 import config from "../config";
 
 export class Login extends Component {
@@ -73,48 +75,23 @@ export class Login extends Component {
     //check if the state is populated with the search params data
     console.log(this.state.params);
 
-    const searchURL = `${config.API_ENDPOINT}/registration-page`;
+    AuthApiService.postLogin({
+      email: loginEmail, 
+      password: loginPassword,
+    })
 
-    const queryString = this.formatQueryParams(data);
-
-    //sent all the params to the final url
-    const url = searchURL + "?" + queryString;
-
-    console.log(url);
-
-    //define the API call parameters
-    const options = {
-      method: "POST",
-      header: {
-        Authorization: "",
-        "Content-Type": "application/json",
-      },
-    };
-
-    //useing the url and parameters above make the api call
-    fetch(url, options)
-      // if the api returns data ...
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Something went wrong, please try again later.");
-        }
-        // ... convert it to json
-        return res.json();
-      })
-      // use the json api output
-      .then((data) => {
-        //check if there is meaningfull data
-        console.log(data);
-        // check if there are no results
-        if (data.totalItems === 0) {
-          throw new Error("No data found");
-        }
-      })
-      .catch((err) => {
-        // this.setState({
-        //   error: err.message,
-        // });
-      });
+    .then(response => {
+      console.log("response ID", response)
+      TokenService.saveAuthToken(response.authToken)
+      TokenService.saveUserId(response.userId)
+      window.location ='/library'
+    })
+    .then(response => {
+      console.log("response:",response)
+    })
+    .catch(err => {
+      console.log(err);
+    });   
   };
 
   render() {
@@ -127,7 +104,8 @@ export class Login extends Component {
     return (
       <div className="login-page">
         <header>
-          <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
+          <h2 className="welcome-header">Welcome to Your Workout Planner!
+          </h2>
         </header>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <fieldset className="welcome-fieldset">

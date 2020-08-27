@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
+import AuthApiService from '../services/auth-api-service';
+import TokenService from '../services/token-service.js';
 import config from "../config";
 
 export class Signup extends Component {
@@ -78,48 +80,21 @@ export class Signup extends Component {
     //check if the state is populated with the search params data
     console.log(this.state.params);
 
-    const searchURL = `${config.API_ENDPOINT}/registration-page`;
+    AuthApiService.postUser({
+      email: signUpEmail,
+      password: signUpPassword,
+  })
 
-    const queryString = this.formatQueryParams(data);
+  .then(response => {
+      console.log('user:', response)
+      TokenService.saveAuthToken(response.authToken)
+      TokenService.saveUserId(response.id)
+      window.location = '/library'
+  }) 
 
-    //sent all the params to the final url
-    const url = searchURL + "?" + queryString;
-
-    console.log(url);
-
-    //define the API call parameters
-    const options = {
-      method: "POST",
-      header: {
-        Authorization: "",
-        "Content-Type": "application/json",
-      },
-    };
-
-    //useing the url and parameters above make the api call
-    fetch(url, options)
-      // if the api returns data ...
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Something went wrong, please try again later.");
-        }
-        // ... convert it to json
-        return res.json();
-      })
-      // use the json api output
-      .then((data) => {
-        //check if there is meaningfull data
-        console.log(data);
-        // check if there are no results
-        if (data.totalItems === 0) {
-          throw new Error("No data found");
-        }
-      })
-      .catch((err) => {
-        // this.setState({
-        //   error: err.message,
-        // });
-      });
+  .catch(res => {
+      this.setState({ error: res.error })
+  })  
   };
 
   render() {

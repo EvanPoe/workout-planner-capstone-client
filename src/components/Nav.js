@@ -1,26 +1,36 @@
 import React, { Component } from "react";
+import TokenService from "../services/token-service.js";
 import { NavLink } from "react-router-dom";
 
 export class Nav extends Component {
+  logOutClick = () => {
+    console.log("Logging out");
+    TokenService.clearAuthToken();
+    TokenService.getUserId = (id) => {
+      // console.log(id)
+    };
+
+    window.location = "/";
+  };
+
   render() {
     return (
       <div className="nav-bar">
-        <NavLink to="/">
-          <h4>Home</h4>
-        </NavLink>
-        <NavLink to="/Library">
-          <h4>Exercise Library</h4>
-        </NavLink>
-        <NavLink to="Login">
-          <h4>Log-In/Log-Out</h4>
-        </NavLink>
-        {/* <nav>
-          <ul >
-            <li>Home</li>
-            <li>Exercise Library</li>
-            <li>Log-In/Log-Out</li>
-          </ul>
-        </nav> */}
+        {TokenService.hasAuthToken() ? (
+          <>
+            <NavLink to="/">
+              <h4>Home</h4>
+            </NavLink>
+            <NavLink to="/Library">
+              <h4>Exercise Library</h4>
+            </NavLink>
+            <NavLink to="/" onClick={this.logOutClick}>
+              Log Out
+            </NavLink>
+          </>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

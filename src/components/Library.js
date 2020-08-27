@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import config from '../config';
+import config from "../config";
+import TokenService from '../services/token-service';
 import Nav from "./Nav";
 
 //receives workouts from user's database AND from Builder.js and renders Links to each Workout.js
@@ -13,6 +14,8 @@ export class Library extends Component {
   }
 
   componentDidMount() {
+    //need the user's Id to assign to the userId variable
+
     const userId = 3;
 
     // console.log(collectionId)
@@ -26,7 +29,7 @@ export class Library extends Component {
 
       .then((data) => {
         // console.log('success:', data)
-        console.log(data)
+        console.log(data);
 
         // let outPutObject = [];
 
@@ -46,11 +49,12 @@ export class Library extends Component {
 
   render() {
     const showUserWorkouts = this.state.userWorkouts.map((workout, key) => {
+      //pass workout to workout.js as props, use componentDidMount in workout.js just as we did here, render exercises inside workout.js
       return (
         <div className="list" key={key}>
-            <h3>{workout.difficulty}</h3>
-            <h3>{workout.type}</h3>
-            <h3>{workout.user_id}</h3>
+          <h3>{workout.difficulty}</h3>
+          <h3>{workout.type}</h3>
+          <h3>{workout.user_id}</h3>
         </div>
       );
     });
@@ -59,10 +63,22 @@ export class Library extends Component {
         <p className="library-intro">
           Welcome to your personal workout library! It looks like you don't have
           any workouts. That's ok! Click the button below to create your first!
+          {TokenService.getUserId()}
         </p>
         {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
-        {showUserWorkouts}
-        <NavLink to='/Builder'>Add Workout</NavLink>
+        <NavLink
+          to={{
+            pathname: "/workout",
+            exerciseProps: {
+            difficulty: "easy",
+            // type: this.workout.type,
+            // user_id: this.workout.user_id,
+            }
+          }}
+        >
+          {showUserWorkouts}
+        </NavLink>
+        <NavLink to="/builder">Add Workout</NavLink>
         <NavLink className="useful-info-link" to="/BasicInfo">
           <h5>Useful Information for Newcomers!</h5>
         </NavLink>
