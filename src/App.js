@@ -52,7 +52,7 @@ export class App extends Component {
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/library' component={Library}/>
             <Route exact path='/builder' component={Builder}/>
-            <Route exact path='/workout' component={Workout}/>
+            <Route path='/workout/:workoutId' component={Workout}/>
             <Route exact path='/basic-info' component={BasicInfo}/>
           </Switch>
         </BrowserRouter>

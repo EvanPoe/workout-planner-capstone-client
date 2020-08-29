@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import config from "../config";
-import TokenService from '../services/token-service';
+import TokenService from "../services/token-service";
 import Nav from "./Nav";
 
 //receives workouts from user's database AND from Builder.js and renders Links to each Workout.js
@@ -22,7 +22,7 @@ export class Library extends Component {
 
     let url = `${config.API_ENDPOINT}/workouts/users/${userId}`;
 
-    console.log(url)
+    console.log(url);
 
     fetch(url)
       .then((response) => response.json())
@@ -51,11 +51,24 @@ export class Library extends Component {
     const showUserWorkouts = this.state.userWorkouts.map((workout, key) => {
       //pass workout to workout.js as props, use componentDidMount in workout.js just as we did here, render exercises inside workout.js
       return (
-        <div className="list" key={key}>
-          <h3>{workout.difficulty}</h3>
-          <h3>{workout.type}</h3>
-          <h3>{workout.user_id}</h3>
-        </div>
+        <>
+          <NavLink
+            to={{
+              pathname: `/workout/${workout.id}`,
+              exerciseProps: {
+                difficulty: "easy",
+                // type: this.workout.type,
+                // user_id: this.workout.user_id,
+              },
+            }}
+            //???? Trying to get workouts to be a link with {showUserWorkouts}
+          >
+          <div className="list" key={key}>
+            <h3>{workout.difficulty}</h3>
+            <h3>{workout.type}</h3>
+          </div>
+          </NavLink>
+        </>
       );
     });
     return (
@@ -65,18 +78,9 @@ export class Library extends Component {
           any workouts. That's ok! Click the button below to create your first!
         </p>
         {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
-        <NavLink
-          to={{
-            pathname: "/workout",
-            exerciseProps: {
-            difficulty: "easy",
-            // type: this.workout.type,
-            // user_id: this.workout.user_id,
-            }
-          }}
-        >
-          {showUserWorkouts}
-        </NavLink>
+
+        {showUserWorkouts}
+
         <NavLink to="/builder">Add Workout</NavLink>
         <NavLink className="useful-info-link" to="/BasicInfo">
           <h5>Useful Information for Newcomers!</h5>

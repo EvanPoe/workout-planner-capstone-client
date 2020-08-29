@@ -22,7 +22,7 @@ export class Nav extends Component {
               <h4>Home</h4>
             </NavLink>
             <NavLink to="/Library">
-              <h4>Exercise Library</h4>
+              <h4>Workouts Library</h4>
             </NavLink>
             <NavLink to="/" onClick={this.logOutClick}>
               Log Out {TokenService.getUserId()}
