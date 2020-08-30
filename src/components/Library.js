@@ -33,7 +33,7 @@ export class Library extends Component {
 
         // let outPutObject = [];
 
-        // let bookDetails = data
+        // let workoutDetails = data
 
         this.setState({
           userWorkouts: data,
@@ -44,7 +44,33 @@ export class Library extends Component {
         console.log(err);
       });
 
-    console.log("Stateful component add book successfully mounted.");
+    console.log("Stateful component add workout successfully mounted.");
+  }
+
+  deleteWorkout(event) {
+    event.preventDefault();
+
+    const data = {};
+
+    const formData = new FormData(event.target);
+
+    for (let value of formData) {
+      data[value[0]] = value[1];
+    }
+
+    console.log(data);
+
+    let { workoutId } = data;
+    console.log(workoutId);
+
+    fetch(`${config.API_ENDPOINT}/workouts/${workoutId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    }).then((response) => {
+      window.location = `/library`;
+    });
   }
 
   render() {
@@ -52,22 +78,29 @@ export class Library extends Component {
       //pass workout to workout.js as props, use componentDidMount in workout.js just as we did here, render exercises inside workout.js
       return (
         <>
-          <NavLink
-            to={{
-              pathname: `/workout/${workout.id}`,
-              exerciseProps: {
-                difficulty: "easy",
-                // type: this.workout.type,
-                // user_id: this.workout.user_id,
-              },
-            }}
-            //???? Trying to get workouts to be a link with {showUserWorkouts}
-          >
           <div className="list" key={key}>
-            <h3>{workout.difficulty}</h3>
-            <h3>{workout.type}</h3>
+            <NavLink
+              to={{
+                pathname: `/workout/${workout.id}`,
+                exerciseProps: {
+                  difficulty: "easy",
+                  // type: this.workout.type,
+                  // user_id: this.workout.user_id,
+                },
+              }}
+              //???? Trying to get workouts to be a link with {showUserWorkouts}
+            >
+              <h3>
+                {workout.difficulty} - {workout.type}
+              </h3>
+            </NavLink>
+            <form className="workoutForm" onSubmit={this.deleteWorkout}>
+              <input type="hidden" name="workoutId" defaultValue={workout.id}></input>
+              <button type="submit" className="workoutDeleteBtn">
+                Delete Workout
+              </button>
+            </form>
           </div>
-          </NavLink>
         </>
       );
     });
