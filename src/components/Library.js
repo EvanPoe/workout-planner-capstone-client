@@ -21,8 +21,6 @@ export class Library extends Component {
     // console.log(collectionId)
 
     let url = `${config.API_ENDPOINT}/workouts/users/${userId}`;
-// TO DO     POST WORKOUT BY USER WORKS FROM BACKEND BUT NOT FRONT END
-// error: GEThttp://localhost:8000/api/exercises/workout/38    404 not found
     console.log(url);
 
     fetch(url)
@@ -78,7 +76,6 @@ export class Library extends Component {
     const showUserWorkouts = this.state.userWorkouts.map((workout, key) => {
       //pass workout to workout.js as props, use componentDidMount in workout.js just as we did here, render exercises inside workout.js
       return (
-        <>
           <div className="list" key={key}>
             <NavLink
               to={{
@@ -102,7 +99,6 @@ export class Library extends Component {
               </button>
             </form>
           </div>
-        </>
       );
     });
     return (

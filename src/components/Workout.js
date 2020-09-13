@@ -12,7 +12,7 @@ export default class Workout extends Component {
       componentDidMount() {
         const workoutId = this.props.match.params.workoutId;
   
-        let url = `${config.API_ENDPOINT}/exercises/workout/${workoutId}`;
+        let url = `${config.API_ENDPOINT}/user-exercises/workout/${workoutId}`;
         console.log(url)
         fetch(url)
           .then((response) => response.json())
