@@ -45,13 +45,14 @@ export default class Workout extends Component {
         if (this.state.exercises.length > 0) {
           //...map them in order to display them
           showWorkoutExercises = this.state.exercises.map((exercise, key) => {
+            let imageUrl = `../website-images/${exercise.image}`
             return (
                 <div className="list" key={key}>
                 <h3>{exercise.name}</h3>
                 <h3>{exercise.description}</h3>
                 <h3>{exercise.sets}</h3>
                 <h3>{exercise.rest}</h3>
-                <h3>{exercise.image}</h3>
+                <img src={imageUrl} className="exerciseImage" alt={exercise.name} />
               </div>
             )
         });
