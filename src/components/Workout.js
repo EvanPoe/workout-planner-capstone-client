@@ -49,9 +49,9 @@ export default class Workout extends Component {
             return (
                 <div className="list" key={key}>
                 <h3>{exercise.name}</h3>
-                <h3>{exercise.description}</h3>
-                <h3>{exercise.sets}</h3>
-                <h3>{exercise.rest}</h3>
+                <p>{exercise.description}</p>
+                <h5>Sets: {exercise.sets}</h5>
+                <h5>Rest: {exercise.rest}</h5>
                 <img src={imageUrl} className="exerciseImage" alt={exercise.name} />
               </div>
             )
@@ -59,7 +59,7 @@ export default class Workout extends Component {
         }
         
         return (
-            <div>
+            <div class="exercise-list">
                 {showWorkoutExercises}
             </div>
         )

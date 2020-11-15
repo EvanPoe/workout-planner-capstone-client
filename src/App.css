@@ -48,7 +48,6 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
   -o-padding-end: 0px;
 }
 
-
 /* -------------------------------------
 General styles (General Module, wrapping around the modules below)
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules below (h2, h3, h4, h5, h6, p, a, ul, li))
@@ -58,24 +57,79 @@ body {
   margin: 0;
   margin-bottom: 50px;
   padding: 0;
-  border: 3px solid white;
+  background-color: aqua;
+  background-image: url("background.jpg");
+}
+
+div#root div.App div.nav-bar {
+  padding: 10px;
+  background-color: white;
+  opacity: 0.8;
+  position: static;
+  display: block;
+  width: 100%;
+  top: 0;
+}
+
+div#root div.App div.nav-bar > a {
+  display: inline-block;
+  width: auto;
+  padding: 10px 20px;
+  border-right: 2px solid #ddd;
+}
+
+div#root div.App div.nav-bar > a:last-child {
+  border-right: 0;
 }
 
 li {
   list-style: none;
 }
 
+input,
+select,
+button {
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(63, 193, 216);
+  text-decoration: underline;
+}
+
 /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
 */
-.nav-bar {
+/* .nav-bar {
   margin: 5px auto;
   padding: 10px;
   list-style: none;
   display: flex;
   justify-content: space-around;
-  background: grey;
+  background: #000000;
+  border: 1px solid black;
+}
+/* not changing with hover */
+/* .nav-bar > a {
+  color: white;
+}  */
+*/ header {
+  margin: 5px auto;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background: #000000;
   border: 1px solid black;
 }
 
@@ -84,6 +138,52 @@ Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
 
+div#root div.App div.welcome-page {
+  text-align: center;
+}
+
+div#root div.App div.welcome-page section.login-form {
+  padding: 25px;
+  margin: 30px auto;
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  width: 40%;
+  max-width: 400px;
+}
+
+div#root
+  div.App
+  div.welcome-page
+  section.login-form
+  fieldset.welcome-fieldset
+  a {
+  display: block;
+}
+
+div#root div.App div.welcome-page section#example-section {
+  padding: 25px;
+  margin: 30px auto;
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  width: 40%;
+  max-width: 400px;
+}
+
+div#root div.App div.empty-library {
+  padding: 25px;
+  width: 80%;
+  margin: 30px auto;
+  max-width: 1000px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+}
+
 .pushup-image {
   width: 100px;
   height: 100px;
@@ -91,11 +191,11 @@ Content styles (Main Module)
 
 .welcome-header {
   text-align: center;
-  background: grey;
+  color: white;
   padding: 10px;
 }
 
-.welcome-fieldset {
+/* .welcome-fieldset {
   display: flex;
   flex-direction: column;
   min-width: 200px;
@@ -104,34 +204,42 @@ Content styles (Main Module)
   text-align: center;
 }
 
-.welcome-fieldset div, label, input {
-  margin: auto;
-}
-
-#example-section header, h3, h4 {
-  text-align: center;
-  margin: 15px auto;
-}
-
-.example-header {
-  background: grey;
-  padding: 10px;
-  margin: auto;
-}
-
-.empty-library {
-  display: flex;
-  flex-direction: column;
-}
+.welcome-fieldset div,
+label,
+input {
+  margin-left: auto;
+  margin-right: auto;
+} */
 
 .library-intro {
   margin: 10px 25px;
+  background-color: white;
+  text-align: center;
+}
+
+div#root div.App div.exercise-list {
+  padding: 25px;
+  width: 80%;
+  margin: 30px auto;
+  max-width: 1000px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+}
+
+.list {
+  background-color: white;
+  text-align: center;
 }
 
 .disclaimer {
   margin: 10px 25px;
   border: 1px solid black;
   padding: 2px;
+  background-color: white;
 }
 
 .add-workout {
@@ -176,9 +284,9 @@ Content styles (Main Module)
   margin-left: 5px;
 }
 
-.workout-back-button{
-    display: block;
-    margin: 0 auto;
+.workout-back-button {
+  display: block;
+  margin: 0 auto;
 }
 
 .info-back-button {
@@ -200,7 +308,6 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
-
 /* -------------------------------------
 place all the desktop styles above this line
 Responsive styles
@@ -208,59 +315,44 @@ Responsive styles
 place all the mobile tables styles below this line
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*large desktop*/
 @media only screen and (max-width: 1600px) {
   body {
-      border: 3px solid yellow;
+    border: 3px solid yellow;
   }
 }
 
 /*iPad lanscape / small laptop*/
 @media only screen and (max-width: 1024px) {
   body {
-      border: 3px solid blue;
+    border: 3px solid blue;
   }
 }
 
 /*iPad potrait*/
 @media only screen and (max-width: 768px) {
   body {
-      border: 3px solid red;
+    border: 3px solid red;
   }
 }
 
 /*Android landscape*/
 @media only screen and (max-width: 640px) {
   body {
-      border: 3px solid brown;
+    border: 3px solid brown;
   }
 }
 
 /*iPhone landscape*/
 @media only screen and (max-width: 480px) {
   body {
-      border: 3px solid green;
+    border: 3px solid green;
   }
 }
 
 /*iPhone portrait*/
 @media only screen and (max-width: 320px) {
   body {
-      border: 3px solid purple;
+    border: 3px solid purple;
   }
 }

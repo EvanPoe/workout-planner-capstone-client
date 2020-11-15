@@ -25,7 +25,8 @@ export class Nav extends Component {
               <h4>Workouts Library</h4>
             </NavLink>
             <NavLink to="/" onClick={this.logOutClick}>
-              Log Out {TokenService.getUserId()}
+              <h4>Log Out</h4>
+              {/*  {TokenService.getUserId()} */}
             </NavLink>
           </>
         ) : (

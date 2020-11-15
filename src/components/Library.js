@@ -104,8 +104,7 @@ export class Library extends Component {
     return (
       <div className="empty-library">
         <p className="library-intro">
-          Welcome to your personal workout library! It looks like you don't have
-          any workouts. That's ok! Click the button below to create your first!
+          Welcome to your personal workout library! Below you can view, add, or delete any workouts you like! Let's get started!
         </p>
         {/* <input className="add-workout" type="submit" value="Add Workout" /> */}
 
