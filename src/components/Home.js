@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-
+//one comment for state-less component
 export class Home extends Component {
-
     render() {
         return (
             <div className="welcome-page">
 
                 <header>
-                    <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
+                    {/* <h2 className="welcome-header">Welcome to Your Workout Planner!</h2> */}
                 </header>
 
                 <section className="login-form">

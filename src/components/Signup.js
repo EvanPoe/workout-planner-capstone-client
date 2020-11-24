@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom';
-import AuthApiService from '../services/auth-api-service';
-import TokenService from '../services/token-service.js';
+import { NavLink } from "react-router-dom";
+import AuthApiService from "../services/auth-api-service";
+import TokenService from "../services/token-service.js";
 import config from "../config";
 
 export class Signup extends Component {
@@ -83,18 +83,18 @@ export class Signup extends Component {
     AuthApiService.postUser({
       email: signUpEmail,
       password: signUpPassword,
-  })
+    })
 
-  .then(response => {
-      console.log('user:', response)
-      TokenService.saveAuthToken(response.authToken)
-      TokenService.saveUserId(response.id)
-      window.location = '/library'
-  }) 
+      .then((response) => {
+        console.log("user:", response);
+        TokenService.saveAuthToken(response.authToken);
+        TokenService.saveUserId(response.id);
+        window.location = "/library";
+      })
 
-  .catch(res => {
-      this.setState({ error: res.error })
-  })  
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
   };
 
   render() {
@@ -107,7 +107,7 @@ export class Signup extends Component {
     return (
       <div className="sign-up-page">
         <header>
-          <h2 className="welcome-header">Welcome to Your Workout Planner!</h2>
+          {/* <h2 className="welcome-header">Welcome to Your Workout Planner!</h2> */}
         </header>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <fieldset className="welcome-fieldset">
@@ -116,14 +116,29 @@ export class Signup extends Component {
               {errorMessage}
             </div>
             <label htmlFor="signUpEmail">Enter Email Address: </label>
-            <input name="signUpEmail" type="text" />
+            <input
+              name="signUpEmail"
+              type="text"
+              placeholder="Email"
+              required
+            />
             <label htmlFor="signUpPassword">Enter Password: </label>
-            <input name="signUpPassword" type="password" />
+            <input
+              name="signUpPassword"
+              type="password"
+              placeholder="Password"
+              required
+            />
             <label htmlFor="verifyPassword">Re-enter Password: </label>
-            <input name="verifyPassword" type="password" />
-            <label htmlFor="getStarted">Let's Get Started!</label>
+            <input
+              name="verifyPassword"
+              type="password"
+              placeholder="Re-enter Password"
+              required
+            />
+            {/* <label htmlFor="getStarted">Let's Get Started!</label> */}
             <input name="getStarted" type="submit" value="Register" />
-            <NavLink to='/Login'>Returning User? Log In Here...</NavLink>
+            <NavLink to="/Login">Returning User? Log In Here...</NavLink>
             {/* <a href="placeholder">Returning User? Log In Here...</a> */}
           </fieldset>
         </form>

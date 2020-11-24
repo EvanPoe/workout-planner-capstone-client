@@ -61,6 +61,12 @@ body {
   background-image: url("background.jpg");
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 div#root div.App div.nav-bar {
   padding: 10px;
   background-color: white;
@@ -71,19 +77,31 @@ div#root div.App div.nav-bar {
   top: 0;
 }
 
-div#root div.App div.nav-bar > a {
+div#root div.App div.nav-bar h1.dumbbell-logo {
+  display: inline-block;
+  width: auto;
+  font-size: 150%;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+div#root div.App div.nav-bar div.nav-link-wrapper > a {
   display: inline-block;
   width: auto;
   padding: 10px 20px;
   border-right: 2px solid #ddd;
 }
 
-div#root div.App div.nav-bar > a:last-child {
+div#root div.App div.nav-bar div.nav-link-wrapper > a:last-child {
   border-right: 0;
 }
 
 li {
   list-style: none;
+}
+
+.nav-link-wrapper {
+  float: right;
 }
 
 input,
@@ -92,7 +110,7 @@ button {
   padding: 10px 20px;
   border: 1px solid grey;
   border-radius: 5px;
-  display: block;
+  /* display: block; */
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -211,8 +229,65 @@ input {
   margin-right: auto;
 } */
 
+div#root div.App div.login-page form.login-form {
+  padding: 25px;
+  margin: 30px auto;
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  width: 40%;
+  max-width: 400px;
+}
+
+div#root
+  div.App
+  div.login-page
+  form.login-form
+  fieldset.welcome-fieldset
+  > input[type="text"],
+input[type="password"] {
+  width: 90%;
+}
+
+div#root
+  div.App
+  div.login-page
+  form.login-form
+  fieldset.welcome-fieldset
+  p.login-demo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div#root div.App div.sign-up-page form.login-form {
+  padding: 25px;
+  margin: 30px auto;
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  background-color: white;
+  width: 40%;
+  max-width: 400px;
+}
+
+div#root
+  div.App
+  div.sign-up-page
+  form.login-form
+  fieldset.welcome-fieldset
+  > input[type="text"],
+input[type="password"] {
+  width: 90%;
+}
+
+#root > div > div.sign-up-page > form > fieldset > a {
+  display: block;
+}
+
 .library-intro {
   margin: 10px 25px;
+  margin-bottom: 25px;
   background-color: white;
   text-align: center;
 }
@@ -230,20 +305,59 @@ div#root div.App div.exercise-list {
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
 }
 
-.list {
-  background-color: white;
+#root > div > div.empty-library {
   text-align: center;
+}
+
+#root > div > div.empty-library > div > form {
+  content: ""; 
+  display: block; 
+  margin: 0 auto; 
+  width: 50%; 
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 15px;
+}
+
+#root > div > div.empty-library > div > form > button {
+  background-color: #333;
+  color: white;
+  padding: 3px 4px;
+  font-size: 75%;
+}
+
+#root > div > div.empty-library > div > form > button:hover {
+  background-color: rgb(167, 21, 21);
+  cursor: pointer;
+}
+
+#root > div > div.empty-library > a > i {
+  font-size: 130%;
+}
+
+#root > div > div.empty-library > a.useful-info-link > h5 {
+  margin-top: 20px;
 }
 
 .disclaimer {
   margin: 10px 25px;
+  margin-top: 25px;
+  text-align: left;
   border: 1px solid black;
   padding: 2px;
   background-color: white;
 }
 
-.add-workout {
-  margin-top: 15px;
+#root > div > div.workout-builder {
+  padding: 25px;
+  width: 80%;
+  margin: 30px auto;
+  max-width: 1000px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
 }
 
 .useful-info-link {

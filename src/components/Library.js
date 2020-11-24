@@ -95,7 +95,7 @@ export class Library extends Component {
             <form className="workoutForm" onSubmit={this.deleteWorkout}>
               <input type="hidden" name="workoutId" defaultValue={workout.id}></input>
               <button type="submit" className="workoutDeleteBtn">
-                Delete Workout
+              <i class="fas fa-trash-alt"></i>
               </button>
             </form>
           </div>
@@ -110,7 +110,7 @@ export class Library extends Component {
 
         {showUserWorkouts}
 
-        <NavLink to="/builder">Add Workout</NavLink>
+        <NavLink to="/builder"><i class="fas fa-plus-square"></i></NavLink>
         <NavLink className="useful-info-link" to="/BasicInfo">
           <h5>Useful Information for Newcomers!</h5>
         </NavLink>

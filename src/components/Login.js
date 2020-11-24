@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
 import config from "../config";
-
+//one comment for each state-ful component
 export class Login extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +16,7 @@ export class Login extends Component {
     };
   }
 
+    //take the query parameters and format them for the api call
   formatQueryParams(params) {
     const queryItems = Object.keys(params).map(
       (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
@@ -104,8 +105,7 @@ export class Login extends Component {
     return (
       <div className="login-page">
         <header>
-          <h2 className="welcome-header">Welcome to Your Workout Planner!
-          </h2>
+          {/* <h2 className="welcome-header">Welcome to Your Workout Planner!</h2> */}
         </header>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <fieldset className="welcome-fieldset">
@@ -117,18 +117,19 @@ export class Login extends Component {
             <input
               name="loginEmail"
               type="text"
-              placeholder="Email"
+              value="test@gmail.com"
               required
             />
             <label htmlFor="loginPassword">Password: </label>
             <input
               name="loginPassword"
               type="password"
-              placeholder="Password"
+              value="TestPassword123"
               required
             />
-            <label htmlFor="get-started">Let's Get Going!</label>
+            {/* <label htmlFor="get-started">Let's Get Going!</label> */}
             <input name="get-started" type="submit" value="Log In" />
+            <p class="login-demo">Demo Email: test@gmail.com<br/>Demo Password: TestPassword123</p>
             <NavLink to='/Signup'>New User? Create an Account Here...</NavLink>
             {/* <a href="placeholder">New User? Create an Account Here...</a> */}
           </fieldset>

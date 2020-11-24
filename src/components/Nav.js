@@ -15,9 +15,10 @@ export class Nav extends Component {
 
   render() {
     return (
-      <div className="nav-bar">
+      <div className="clearfix nav-bar">
+      <h1 className="dumbbell-logo"><i className="fas fa-dumbbell"></i> Workout Planner</h1>
         {TokenService.hasAuthToken() ? (
-          <>
+          <div className="nav-link-wrapper">
             <NavLink to="/">
               <h4>Home</h4>
             </NavLink>
@@ -28,7 +29,7 @@ export class Nav extends Component {
               <h4>Log Out</h4>
               {/*  {TokenService.getUserId()} */}
             </NavLink>
-          </>
+          </div>
         ) : (
           ""
         )}
