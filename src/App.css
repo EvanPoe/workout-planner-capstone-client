@@ -318,6 +318,10 @@ div#root div.App div.exercise-list {
   margin-bottom: 15px;
 }
 
+#root > div > div.empty-library > div.list {
+  text-transform: uppercase;
+}
+
 #root > div > div.empty-library > div > form > button {
   background-color: #333;
   color: white;
@@ -365,37 +369,50 @@ div#root div.App div.exercise-list {
   margin-top: 25px;
 }
 
-.filled-library {
+#root > div > div.workout-builder > form > fieldset.builder-fieldset {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.builder-fieldset {
-  display: flex;
-  flex-direction: column;
-}
-
-.select-difficulty {
+#root > div > div.workout-builder > form > fieldset > select.select-difficulty {
   margin: 10px auto;
   max-width: 115px;
 }
 
-.select-type {
+#root > div > div.workout-builder > form > fieldset > select.select-type {
   margin: 10px auto;
   max-width: 115px;
 }
 
-.builder-submits {
+#root > div > div.workout-builder > form > fieldset > section.builder-submits {
   display: flex;
   margin: auto;
 }
 
-.builder-cancel {
-  margin-right: 5px;
+#root > div > div.workout-builder > form > fieldset > section > a {
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(239, 239, 239);
+  text-decoration: none;
 }
 
-.builder-create {
+#root > div > div.workout-builder > form > fieldset > section > a:hover {
+  color: black;
+  background-color: rgb(63, 193, 216);
+}
+
+#root > div > div.workout-builder > form > fieldset > section > input.builder-create {
   margin-left: 5px;
+}
+
+#root > div > div.workout-builder > form > fieldset > section > input.builder-create:hover {
+  cursor: pointer;
+  background-color: rgb(63, 193, 216);
 }
 
 .workout-back-button {
