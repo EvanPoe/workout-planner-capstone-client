@@ -20,13 +20,16 @@ export class Nav extends Component {
         {TokenService.hasAuthToken() ? (
           <div className="nav-link-wrapper">
             <NavLink to="/">
-              <h4>Home</h4>
+            <i className="fa fa-home clickables"></i>
+              <span> Home</span>
             </NavLink>
             <NavLink to="/Library">
-              <h4>Workouts Library</h4>
+            <i className="fas fa-book-open"></i>
+              <span> Workouts Library</span>
             </NavLink>
             <NavLink to="/" onClick={this.logOutClick}>
-              <h4>Log Out</h4>
+            <i className="fas fa-sign-out-alt"></i>
+              <span> Log Out</span>
               {/*  {TokenService.getUserId()} */}
             </NavLink>
           </div>

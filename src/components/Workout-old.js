@@ -349,7 +349,7 @@ export class Workout extends Component {
               <h2>Books</h2>
               {existingBooks}
               <button>
-                <a href="/booklist/create" class="s-button">
+                <a href="/booklist/create" className="s-button">
                   Add a collection
                 </a>
               </button>

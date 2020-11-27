@@ -147,7 +147,7 @@ export class Builder extends Component {
               <option value="lower">Lower</option>
             </select>
             <section className="builder-submits">
-              <NavLink to="/Library">Cancel</NavLink>
+              <NavLink to="/Library" className="non-cta">Cancel</NavLink>
               {/* <input className="builder-cancel" type="submit" value="Cancel" /> */}
               <input className="builder-create" type="submit" value="Create" />
             </section>

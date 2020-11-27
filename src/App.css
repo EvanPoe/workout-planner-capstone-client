@@ -323,19 +323,24 @@ div#root div.App div.exercise-list {
 }
 
 #root > div > div.empty-library > div > form > button {
-  background-color: #333;
+  background-color: rgb(167, 21, 21);
   color: white;
   padding: 3px 4px;
   font-size: 75%;
 }
 
 #root > div > div.empty-library > div > form > button:hover {
-  background-color: rgb(167, 21, 21);
+  background-color: rgb(255, 0, 0);
   cursor: pointer;
 }
 
 #root > div > div.empty-library > a > i {
+  color: green;
   font-size: 130%;
+}
+
+#root > div > div.empty-library > a > i:hover {
+  color: rgb(1, 216, 1);
 }
 
 #root > div > div.empty-library > a.useful-info-link > h5 {
@@ -408,11 +413,23 @@ div#root div.App div.exercise-list {
 
 #root > div > div.workout-builder > form > fieldset > section > input.builder-create {
   margin-left: 5px;
+  color: white;
+  background-color: rgb(0, 90, 0);
 }
 
 #root > div > div.workout-builder > form > fieldset > section > input.builder-create:hover {
   cursor: pointer;
-  background-color: rgb(63, 193, 216);
+  background-color: rgb(53, 170, 53)
+}
+
+.non-cta {
+  color: white;
+  background-color: rgb(199, 72, 72) !important;
+}
+
+.non-cta:hover {
+  color: white !important;
+  background-color: red !important;
 }
 
 .workout-back-button {
@@ -464,6 +481,9 @@ place all the mobile tables styles below this line
 @media only screen and (max-width: 768px) {
   body {
     border: 3px solid red;
+  }
+  #root > div > div.clearfix.nav-bar > div.nav-link-wrapper > a > span {
+    display: none;
   }
 }
 
