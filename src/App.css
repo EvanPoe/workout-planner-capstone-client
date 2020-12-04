@@ -306,8 +306,8 @@ div#root div.App div.exercise-list {
 }
 
 #root > div > div.empty-library > div > form {
-  content: "";
-  display: block;
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
   margin: 0 auto;
   width: 50%;
   border-bottom: 2px solid #ddd;
@@ -455,8 +455,24 @@ div#root div.App div.exercise-list {
   height: 100px;
 }
 
+#root > div > div.exercise-list > div.list {
+  margin-left: 25px;
+}
+
+#root > div > div.exercise-list > div.list > h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#root > div > div.exercise-list > div.list > h5 {
+  font-weight: normal;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 .exerciseImage {
   max-width: 75%;
+  margin-bottom: 10px;
 }
 
 /* -------------------------------------
