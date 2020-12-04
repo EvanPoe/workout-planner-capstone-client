@@ -130,7 +130,7 @@ export class Login extends Component {
             {/* <label htmlFor="get-started">Let's Get Going!</label> */}
             <input name="get-started" type="submit" value="Log In" />
             <p className="login-demo">Demo Email: test@gmail.com<br/>Demo Password: TestPassword123</p>
-            <NavLink to='/Signup'>New User? Create an Account Here...</NavLink>
+            <NavLink to='/Signup' className="new-user-cta">New User? Create an Account Here...</NavLink>
             {/* <a href="placeholder">New User? Create an Account Here...</a> */}
           </fieldset>
         </form>

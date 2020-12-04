@@ -171,6 +171,10 @@ div#root div.App div.welcome-page section.login-form {
   max-width: 400px;
 }
 
+a.new-user-cta {
+  text-decoration: underline;
+}
+
 div#root
   div.App
   div.welcome-page
@@ -213,22 +217,6 @@ div#root div.App div.empty-library {
   padding: 10px;
 }
 
-/* .welcome-fieldset {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  max-width: 400px;
-  margin: auto;
-  text-align: center;
-}
-
-.welcome-fieldset div,
-label,
-input {
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 div#root div.App div.login-page form.login-form {
   padding: 25px;
   margin: 30px auto;
@@ -260,6 +248,11 @@ div#root
   margin-bottom: 10px;
 }
 
+#root > div > div.login-page > form > fieldset > input[type=submit]:hover {
+  cursor: pointer;
+  background-color: rgb(173, 173, 173);
+}
+
 div#root div.App div.sign-up-page form.login-form {
   padding: 25px;
   margin: 30px auto;
@@ -271,18 +264,21 @@ div#root div.App div.sign-up-page form.login-form {
   max-width: 400px;
 }
 
-div#root
-  div.App
-  div.sign-up-page
-  form.login-form
-  fieldset.welcome-fieldset
-  > input[type="text"],
-input[type="password"] {
+div#root div.App div.sign-up-page form.login-form fieldset.welcome-fieldset > input[type="text"], input[type="password"] {
   width: 90%;
+}
+
+#root > div > div.sign-up-page > form > fieldset > input {
+  display: block;
 }
 
 #root > div > div.sign-up-page > form > fieldset > a {
   display: block;
+}
+
+#root > div > div.sign-up-page > form > fieldset > input[type=submit]:hover {
+  cursor: pointer;
+  background-color: rgb(173, 173, 173);
 }
 
 .library-intro {
@@ -310,10 +306,10 @@ div#root div.App div.exercise-list {
 }
 
 #root > div > div.empty-library > div > form {
-  content: ""; 
-  display: block; 
-  margin: 0 auto; 
-  width: 50%; 
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 50%;
   border-bottom: 2px solid #ddd;
   margin-bottom: 15px;
 }
@@ -411,15 +407,27 @@ div#root div.App div.exercise-list {
   background-color: rgb(63, 193, 216);
 }
 
-#root > div > div.workout-builder > form > fieldset > section > input.builder-create {
+#root
+  > div
+  > div.workout-builder
+  > form
+  > fieldset
+  > section
+  > input.builder-create {
   margin-left: 5px;
   color: white;
   background-color: rgb(0, 90, 0);
 }
 
-#root > div > div.workout-builder > form > fieldset > section > input.builder-create:hover {
+#root
+  > div
+  > div.workout-builder
+  > form
+  > fieldset
+  > section
+  > input.builder-create:hover {
   cursor: pointer;
-  background-color: rgb(53, 170, 53)
+  background-color: rgb(53, 170, 53);
 }
 
 .non-cta {

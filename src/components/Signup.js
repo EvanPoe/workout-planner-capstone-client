@@ -138,7 +138,7 @@ export class Signup extends Component {
             />
             {/* <label htmlFor="getStarted">Let's Get Started!</label> */}
             <input name="getStarted" type="submit" value="Register" />
-            <NavLink to="/Login">Returning User? Log In Here...</NavLink>
+            <NavLink to="/Login" className="new-user-cta">Returning User? Log In Here...</NavLink>
             {/* <a href="placeholder">Returning User? Log In Here...</a> */}
           </fieldset>
         </form>

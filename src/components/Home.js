@@ -14,8 +14,8 @@ export class Home extends Component {
                     <fieldset className="welcome-fieldset">
                         <h3 className="welcome-message">A customized workout just for you is only a few clicks away!</h3>
                         <label htmlFor="get-started">Let's Get Started!</label>
-                        <NavLink to='/Login'>Login</NavLink>
-                        <NavLink to='/Signup'>New User? Create an Account Here...</NavLink>
+                        <NavLink to='/Login' className="new-user-cta">Login</NavLink>
+                        <NavLink to='/Signup' className="new-user-cta">New User? Create an Account Here...</NavLink>
                         {/* <input name="get-started" type="submit" value="Log In" />
                         <a href="/">New User? Create an Account Here...</a> */}
                     </fieldset>
