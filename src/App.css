@@ -456,7 +456,7 @@ div#root div.App div.exercise-list {
 }
 
 .exerciseImage {
-  width: 500px;
+  max-width: 75%;
 }
 
 /* -------------------------------------
