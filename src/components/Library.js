@@ -111,7 +111,7 @@ export class Library extends Component {
         {showUserWorkouts}
 
         <NavLink to="/builder"><i className="fas fa-plus-square"></i></NavLink>
-        <NavLink className="useful-info-link" to="/BasicInfo">
+        <NavLink className="useful-info-link" to="/basic-info">
           <h5>Useful Information for Newcomers!</h5>
         </NavLink>
         {/* <a className="useful-info-link" href="placeholder">

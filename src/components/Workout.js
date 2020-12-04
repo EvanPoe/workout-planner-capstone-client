@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from "../config";
+import { NavLink } from "react-router-dom";
 
 export default class Workout extends Component {
     constructor(props) {
@@ -62,6 +63,7 @@ export default class Workout extends Component {
         return (
             <div className="exercise-list">
                 {showWorkoutExercises}
+                <NavLink to='/Library'><i class="fas fa-arrow-left"></i> Back</NavLink>
             </div>
         )
     }
