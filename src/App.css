@@ -555,6 +555,13 @@ place all the mobile tables styles below this line
   body {
     border: 3px solid green;
   }
+  div#root div.App div.welcome-page section.login-form {
+    width: 80%;
+  }
+
+  div#root div.App div.login-page form.login-form {
+    width: 80%;
+  }
 }
 
 /*iPhone portrait*/
