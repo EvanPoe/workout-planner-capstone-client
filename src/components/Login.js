@@ -117,14 +117,14 @@ export class Login extends Component {
             <input
               name="loginEmail"
               type="text"
-              value="test@gmail.com"
+              defaultValue="test@gmail.com"
               required
             />
             <label htmlFor="loginPassword">Password: </label>
             <input
               name="loginPassword"
               type="password"
-              value="TestPassword123"
+              defaultValue="TestPassword123"
               required
             />
             {/* <label htmlFor="get-started">Let's Get Going!</label> */}
