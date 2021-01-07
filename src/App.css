@@ -521,23 +521,23 @@ place all the mobile tables styles below this line
 
 /*large desktop*/
 @media only screen and (max-width: 1600px) {
-  body {
+  /* body {
     border: 3px solid yellow;
-  }
+  } */
 }
 
 /*iPad lanscape / small laptop*/
 @media only screen and (max-width: 1024px) {
-  body {
+  /* body {
     border: 3px solid blue;
-  }
+  } */
 }
 
 /*iPad potrait*/
 @media only screen and (max-width: 768px) {
-  body {
+  /* body {
     border: 3px solid red;
-  }
+  } */
   #root > div > div.clearfix.nav-bar > div.nav-link-wrapper > a > span {
     display: none;
   }
@@ -545,16 +545,16 @@ place all the mobile tables styles below this line
 
 /*Android landscape*/
 @media only screen and (max-width: 640px) {
-  body {
+  /* body {
     border: 3px solid brown;
-  }
+  } */
 }
 
 /*iPhone landscape*/
 @media only screen and (max-width: 480px) {
-  body {
+  /* body {
     border: 3px solid green;
-  }
+  } */
   div#root div.App div.welcome-page section.login-form {
     width: 80%;
   }
@@ -566,7 +566,7 @@ place all the mobile tables styles below this line
 
 /*iPhone portrait*/
 @media only screen and (max-width: 320px) {
-  body {
+  /* body {
     border: 3px solid purple;
-  }
+  } */
 }

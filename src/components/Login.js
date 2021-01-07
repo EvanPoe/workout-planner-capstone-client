@@ -65,7 +65,7 @@ export class Login extends Component {
     }
     if (this.validatePassword(loginPassword) === "") {
       this.setState({
-        error: "password is not valid",
+        error: "password is not correct",
       });
     }
     //assigning the object from the form data to params in the state

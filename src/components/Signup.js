@@ -61,40 +61,42 @@ export class Signup extends Component {
       this.setState({
         error: "email is not valid",
       });
-    }
-    if (this.validatePassword(signUpPassword) === "") {
+    } else if (this.validatePassword(signUpPassword) === "") {
+      // at least one number, one lowercase and one uppercase letter
+      // at least eight characters that are letters, numbers or the underscore
       this.setState({
-        error: "password is not valid",
+        error:
+          "password must include at least one number, one lowercase and one uppercase letter, and be at least at least eight characters that are letters, numbers or the underscore ",
       });
-    }
-    if (signUpPassword != verifyPassword) {
+    } else if (signUpPassword != verifyPassword) {
       this.setState({
         error: "passwords do not match",
       });
-    }
-    //assigning the object from the form data to params in the state
-    this.setState({
-      params: data,
-    });
+    } else {
+      //assigning the object from the form data to params in the state
+      this.setState({
+        params: data,
+      });
 
-    //check if the state is populated with the search params data
-    console.log(this.state.params);
+      //check if the state is populated with the search params data
+      console.log(this.state.params);
 
-    AuthApiService.postUser({
-      email: signUpEmail,
-      password: signUpPassword,
-    })
-
-      .then((response) => {
-        console.log("user:", response);
-        TokenService.saveAuthToken(response.authToken);
-        TokenService.saveUserId(response.id);
-        window.location = "/library";
+      AuthApiService.postUser({
+        email: signUpEmail,
+        password: signUpPassword,
       })
 
-      .catch((res) => {
-        this.setState({ error: res.error });
-      });
+        .then((response) => {
+          console.log("user:", response);
+          TokenService.saveAuthToken(response.authToken);
+          TokenService.saveUserId(response.id);
+          window.location = "/library";
+        })
+
+        .catch((res) => {
+          this.setState({ error: res.error });
+        });
+    }
   };
 
   render() {
@@ -138,7 +140,9 @@ export class Signup extends Component {
             />
             {/* <label htmlFor="getStarted">Let's Get Started!</label> */}
             <input name="getStarted" type="submit" value="Register" />
-            <NavLink to="/Login" className="new-user-cta">Returning User? Log In Here...</NavLink>
+            <NavLink to="/Login" className="new-user-cta">
+              Returning User? Log In Here...
+            </NavLink>
             {/* <a href="placeholder">Returning User? Log In Here...</a> */}
           </fieldset>
         </form>
