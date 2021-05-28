@@ -512,6 +512,55 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
+footer {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  border: 0px;
+}
+
+section.contact {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+section.contact ul {
+  font-size: 150%;
+}
+
+section.contact ul.contact-list li {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 120%;
+}
+
+section.contact ul.contact-list li a {
+  color: #163a8b;
+}
+
+section.contact ul.contact-list li a:hover {
+  color: #081e6f;
+}
+
+footer h4 {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer a i.far {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  color: #163a8b;
+}
+
+footer a:hover i.far {
+  color: #081e6f;
+}
+
 /* -------------------------------------
 place all the desktop styles above this line
 Responsive styles

@@ -8,6 +8,7 @@ import Library from "./components/Library";
 import Workout from "./components/Workout";
 import BasicInfo from "./components/BasicInfo";
 import Builder from "./components/Builder";
+import Footer from "./components/Footer";
 import "./App.css";
 
 export class App extends Component {
@@ -55,6 +56,7 @@ export class App extends Component {
             <Route path='/workout/:workoutId' component={Workout}/>
             <Route exact path='/basic-info' component={BasicInfo}/>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </div>
     );
