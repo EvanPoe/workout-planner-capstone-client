@@ -536,17 +536,18 @@ section.contact ul.contact-list li {
 }
 
 section.contact ul.contact-list li a {
-  color: #163a8b;
+  color: #FFFFFF;
 }
 
 section.contact ul.contact-list li a:hover {
-  color: #081e6f;
+  color: #72E3F9;
 }
 
 footer h4 {
   display: block;
   text-align: center;
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 footer a i.far {
