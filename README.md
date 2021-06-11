@@ -95,11 +95,8 @@ Login Page
 Sign-up Page
 ![Sign-up Page](/github-images/screenshots/sign-up-page.png)
 
-Empty Library
-![Empty Library](/github-images/screenshots/empty-library.png)
-
-Filled Library
-![LFilled Library](/github-images/screenshots/filled-library.png)
+Library
+![Empty Library](/github-images/screenshots/library.png)
 
 Workout Builder
 ![Workout Builder](/github-images/screenshots/workout-builder.png)
