@@ -1,5 +1,5 @@
 # Workout Planner Capstone
-A library for workouts based on workout type and difficulty.
+A site that allows users to build workouts according to difficulty and type. Users can create an account, add, delete, and view workouts which are saved to their profile on the server.
 
 ## Working Prototype
 You can access a working prototype of the React app here: https://workout-planner-capstone.vercel.app/ and Node app here: https://workout-planner-capstone.herokuapp.com/
