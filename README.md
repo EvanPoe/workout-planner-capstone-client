@@ -54,43 +54,27 @@ This app is for two types of users: a visitor and a logged-in user
 * so I can more easily navigate the website
 
 ### Wireframes
-Welcome Page
 :-------------------------:
 ![Welcome Page](/github-images/wireframes/welcome-page.jpg)
-What to Expect
 ![What to Expect](/github-images/wireframes/what-to-expect.jpg)
-Login Page
 ![Login Page](/github-images/wireframes/login-page.jpg)
-Sign-up Page
 ![Sign-up Page](/github-images/wireframes/sign-up-page.jpg)
-Empty Library
 ![Empty Library](/github-images/wireframes/empty-library.jpg)
-Filled Library
 ![Filled Library](/github-images/wireframes/filled-library.jpg)
-Workout Builder
 ![Workout Builder](/github-images/wireframes/workout-builder.jpg)
-Workout Page
 ![Workout Page](/github-images/wireframes/workout-page.jpg)
-Basic Information Page
 ![Basic Information Page](/github-images/wireframes/basic-information.jpg)
 
 
 
 ## Screenshots
-Welcome Page and What to Expect
 :-------------------------:
 ![Landing Page](/github-images/screenshots/welcome-page.png)
-Login Page
 ![Login Page](/github-images/screenshots/login-page.png)
-Sign-up Page
 ![Sign-up Page](/github-images/screenshots/sign-up-page.png)
-Library
 ![Empty Library](/github-images/screenshots/library.png)
-Workout Builder
 ![Workout Builder](/github-images/screenshots/workout-builder.png)
-Workout Page
 ![Workout Page](/github-images/screenshots/workout-page.png)
-Basic Information Page
 ![Basic Information Page](/github-images/screenshots/basic-information.png)
 
 
